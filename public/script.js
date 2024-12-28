@@ -26,7 +26,7 @@ sendBtn.addEventListener('click', () => {
     }
 });
 
-// Listen for messages from other users
+// Listen for messages from other users (from the server)
 socket.on('chat message', (msg) => {
     appendMessage(msg, 'received');
 });

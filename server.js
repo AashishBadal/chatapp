@@ -15,7 +15,8 @@ io.on('connection', (socket) => {
     
     // Listen for chat messages
     socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);  // Emit message to all clients
+        // Emit message to all clients except the sender
+        socket.broadcast.emit('chat message', msg);  // Broadcast to other clients
     });
 
     // Listen for typing event
